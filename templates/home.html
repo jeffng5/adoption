@@ -1,0 +1,11 @@
+
+<h1>Welcome to Pet Adoption Agency</h1>
+{%for entry in entries%}
+
+<a href="/{{entry.id}}"><h3>{{entry.name}}</h3></a>
+<h3>{{entry.species}}</h3>
+{% if entry.available == True%}
+    <h3>AVAILABLE !!!</h3>
+{%endif%}
+{%endfor%}
+

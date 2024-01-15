@@ -1,0 +1,18 @@
+
+<h1>This is {{pet.name}}</h1>
+<img src="{{pet.photo_url}}">
+<h2>She is a {{pet.species}} and she is {{pet.age}} years old.</h2>
+<h2>Some things about {{pet.name}}, {{pet.notes}}.</h2>
+
+<form action="/{{pet.id}}" method='POST'>
+    {{ form.hidden_tag() }}
+    {% for field in form
+    if field.widget.input_type != 'hidden'%}
+    <p>
+        {{field.label}}
+        {{field}}
+    </p>
+
+{%endfor%}
+<button>Submit</button>
+</form>
